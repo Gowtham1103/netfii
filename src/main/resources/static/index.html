@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Welcome Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: url('https://assets.nflxext.com/ffe/siteui/vlv3/d57aecd3-bd46-4508-940d-35bfc8403e20/1e899ce4-24d0-4d8f-aaf6-b7be8a687fd1/US-en-20230522-popsignuptwoweeks-perspective_alpha_website_small.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+            color: white;
+            position: relative;
+            min-height: 100vh;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+        .header {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            width: 100px;
+        }
+        .header .sign-in-btn {
+            padding: 8px 15px;
+            background-color: #e50914;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+        }
+        .header .sign-in-btn:hover {
+            background-color: #f40612;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-top: 100px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .content h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            animation: slideInFromLeft 1s ease-in-out;
+        }
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            animation: slideInFromRight 1s ease-in-out;
+        }
+        .content form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content input[type="email"] {
+            padding: 10px;
+            width: 90%;
+            max-width: 400px;
+            border: none;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        .content button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #e50914;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .content button:hover {
+            background-color: #f40612;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes slideInFromRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        @media (max-width: 768px) {
+            .header {
+                padding: 10px 20px;
+            }
+            .header img {
+                width: 80px;
+            }
+            .header .sign-in-btn {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+            .content {
+                margin-top: 80px;
+            }
+            .content h1 {
+                font-size: 1.8em;
+            }
+            .content p {
+                font-size: 1em;
+            }
+            .content input[type="email"], .content button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 10px 20px;
+            }
+            .header img {
+                width: 80px;
+            }
+            .header .sign-in-btn {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+            .content {
+                margin-top: 60px;
+            }
+            .content h1 {
+                font-size: 1.6em;
+            }
+            .content p {
+                font-size: 0.9em;
+            }
+            .content input[type="email"], .content button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+    <button class="sign-in-btn">Sign In</button>
+</div>
+<div class="content">
+    <h1>Unlimited movies, TV shows, and more.</h1>
+    <p>Watch anywhere. Cancel anytime.</p>
+    <p>Ready to watch? Enter your email to create or restart your membership.</p>
+    <form action="#">
+        <input type="email" placeholder="Email address">
+        <button type="submit">Get Started</button>
+    </form>
+</div>
+</body>
+</html>
